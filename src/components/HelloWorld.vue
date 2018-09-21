@@ -29,13 +29,21 @@
     </ul>
   </div>
 </template>
-
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import LatLng = google.maps.LatLng;
 
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+
+  private test() {
+      const ll = new LatLng(0,0);
+      const circle = new google.maps.Circle({
+          center: ll,
+      });
+      circle.getRadius();
+  }
 }
 </script>
 
